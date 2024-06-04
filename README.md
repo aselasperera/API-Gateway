@@ -25,6 +25,7 @@ This API Gateway serves as a single entry point for various backend services. It
 - **Product Service**: Manages product-related operations.
 
 ## Project Structure
+        ```bash
 api-gateway-go-fiber/
 │
 ├── cmd/
