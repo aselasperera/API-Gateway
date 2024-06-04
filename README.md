@@ -25,3 +25,28 @@ This API Gateway serves as a single entry point for various backend services. It
 - **Product Service**: Manages product-related operations.
 
 ## Project Structure
+
+api-gateway/
+│
+├── cmd/
+│   └── main.go           # Entry point of the application
+│
+├── config/
+│   └── config.go         # Configuration settings
+│
+├── internal/
+│   ├── handler/
+│   │   ├── users.go      # User routes handlers
+│   │   └── products.go   # Product routes handlers
+│   │
+│   ├── routes/
+│   │   └── routes.go     # API routes definitions
+│   │
+│   └── service/
+│       ├── users.go      # User service integration
+│       └── products.go   # Product service integration
+│
+├── go.mod                # Go module file
+├── go.sum                # Go dependencies
+├── Dockerfile            # Dockerfile for containerization
+└── README.md             # Project README file
