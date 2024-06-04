@@ -25,4 +25,3 @@ This API Gateway serves as a single entry point for various backend services. It
 - **Product Service**: Manages product-related operations.
 
 ## Project Structure
-<img width="448" alt="Screenshot 2024-06-04 at 14 31 07" src="https://github.com/aselasperera/API-Gateway/assets/136217850/90b68128-3c18-4575-b41a-e184a08da849">
