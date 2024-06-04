@@ -1,24 +1,30 @@
 package main
 
 import (
-	"api-gateway/config"
 	"api-gateway/middleware"
-	"api-gateway/routes"
+	"log"
 
 	"github.com/gofiber/fiber/v2"
-	"github.com/gofiber/fiber/v2/middleware/logger"
 )
 
 func main() {
-	config.LoadConfig()
+	app := fiber.New()
 
-	app := fiber.New(fiber.Config{
-		ErrorHandler: middleware.ErrorHandler,
+	// Register middleware
+	app.Use(middleware.MetricsMiddleware)
+
+	// Define routes
+	app.Get("/", func(c *fiber.Ctx) error {
+		return c.SendString("Welcome to the API Gateway!")
 	})
 
-	app.Use(logger.New())
+	app.Get("/api/v1/users", func(c *fiber.Ctx) error {
+		return c.JSON(fiber.Map{"message": "Users Service"})
+	})
 
-	routes.SetupRoutes(app)
+	// Prometheus metrics endpoint
+	app.Get("/metrics", middleware.PrometheusHandler())
 
-	app.Listen(":3000")
+	// Start server
+	log.Fatal(app.Listen(":3001"))
 }
