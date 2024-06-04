@@ -25,28 +25,4 @@ This API Gateway serves as a single entry point for various backend services. It
 - **Product Service**: Manages product-related operations.
 
 ## Project Structure
-
-api-gateway/
-│
-├── cmd/
-│   └── main.go           # Entry point of the application
-│
-├── config/
-│   └── config.go         # Configuration settings
-│
-├── internal/
-│   ├── handler/
-│   │   ├── users.go      # User routes handlers
-│   │   └── products.go   # Product routes handlers
-│   │
-│   ├── routes/
-│   │   └── routes.go     # API routes definitions
-│   │
-│   └── service/
-│       ├── users.go      # User service integration
-│       └── products.go   # Product service integration
-│
-├── go.mod                # Go module file
-├── go.sum                # Go dependencies
-├── Dockerfile            # Dockerfile for containerization
-└── README.md             # Project README file
+<img width="448" alt="Screenshot 2024-06-04 at 14 39 46" src="https://github.com/aselasperera/API-Gateway/assets/136217850/527ad295-b34f-455e-ad1f-4d5f38b145e3">
