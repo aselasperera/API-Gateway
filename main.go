@@ -21,6 +21,9 @@ func main() {
 	app.Get("/api/v1/users", func(c *fiber.Ctx) error {
 		return c.JSON(fiber.Map{"message": "Users Service"})
 	})
+	app.Get("/api/v1/products", func(c *fiber.Ctx) error {
+		return c.JSON(fiber.Map{"message": "Products Service"})
+	})
 
 	// Prometheus metrics endpoint
 	app.Get("/metrics", middleware.PrometheusHandler())
